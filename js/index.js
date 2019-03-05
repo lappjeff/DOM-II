@@ -6,7 +6,15 @@ const logoHeading = document.querySelector('.logo-heading');
 const destinationText = document.querySelectorAll('.destination')
 const contentPick = document.querySelector('.content-pick')
 const firstImg = document.querySelector('img');
+const navLinks = document.querySelectorAll('.nav-link')
 
+//prevent default for nav links
+navLinks.forEach(function(currentLink) {
+    currentLink.addEventListener('click', function(e) {
+        console.log('Nav link was clicked')
+        e.preventDefault();
+    })
+})
 
 //changes text content of logo heading when resized
 window.addEventListener('resize', function(e) {
