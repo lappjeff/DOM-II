@@ -7,7 +7,11 @@ const destinationText = document.querySelectorAll('.destination')
 const contentPick = document.querySelector('.content-pick')
 const firstImg = document.querySelector('img');
 const navLinks = document.querySelectorAll('.nav-link')
+const body = document.querySelector('body')
 
+intro.addEventListener('mouseenter', function(e) {
+    TweenMax.to(e.target, 3, {backgroundColor: 'white'})
+})
 //prevent default for nav links
 navLinks.forEach(function(currentLink) {
     currentLink.addEventListener('click', function(e) {
@@ -27,6 +31,7 @@ window.addEventListener('scroll', function(e) {
 //logs content when page loads
 window.addEventListener('load', function(e) {
     console.log('Page Finished Loading!')
+    TweenMax.to(body, 3, {backgroundColor: '#776f67'})
 })
 
 //try dragging  anything on the page
@@ -53,16 +58,14 @@ intro.addEventListener('copy', function(e) {
 
 //sign up btn events
 
-signUpBtn[0].addEventListener('click', function(e) {
-    e.target.style.color = 'gold';
-    e.target.style.background = 'black';
-    e.target.textContent = 'Double click me!'
+signUpBtn.forEach(function(currentItem) {
+    currentItem.addEventListener('click', function(e){
+        TweenMax.to(e.target, 2, { rotationX: 360, rotationY: 360})
+    })
 })
 
 signUpBtn[0].addEventListener('dblclick', function(e) {
-    e.target.style.color = 'white';
-    e.target.style.background = '#17A2B8'
-    e.target.textContent = 'Click me!'
+    e.target.textContent = 'DOUBLE KILL'
 })
 
 signUpBtn[1].addEventListener('mouseover', function(e) {
